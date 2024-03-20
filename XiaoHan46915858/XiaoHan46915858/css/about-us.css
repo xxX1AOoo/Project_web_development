@@ -1,0 +1,42 @@
+/*Stylesheet author: Xiao HAN*/
+/* about-us.css*/
+
+.about_us{
+    width: 65vw;
+    margin: 0 auto;
+    margin-top: 3vw;
+    position: relative;
+}
+
+.about_us::before{
+    /*https://www.sitepoint.com/css3-transform-background-image/*/
+    content: "";
+    background-image: url(../images/about-us2.png);
+    background-repeat: no-repeat;
+    background-position: right; 
+    background-size: cover;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 25%;
+    left: 45%;
+    z-index: -1;
+    opacity: 0.6;
+    transform: rotate(15deg);
+    border-radius: 1.5vw;
+}
+
+.aboutinfor{
+    width: 35vw;
+    padding: 3vw;
+}
+
+.aboutinfor h2{
+    font-size: 2vw;
+}
+
+.aboutinfor p{
+    margin: 1vw 0;
+    line-height: 2em;
+    font-size: 1.25vw;
+}

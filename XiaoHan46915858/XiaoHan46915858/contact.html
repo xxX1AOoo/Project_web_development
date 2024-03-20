@@ -1,0 +1,132 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Online Message</title>
+		<!-- Add the link to the stylesheet -->
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="Xiao HAN">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="An interactive informational website about Nintendo Games">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Add the JavaScript files -->
+        <script defer src="js/script.js"></script>    
+	</head>
+
+    <!--Header - logo & menu bar-->
+    <div class="headercontainer">
+        <header>
+            <div class="logo" >
+                <a href="index.html">
+                <img src="image/fearless_logo.jpg" alt="FEARLESS Logo">
+                </a>
+            </div>
+            
+            <nav class="homemenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="news-events.html">News</a></li>
+                    <li><a href="game-centre.html">Games</a></li>
+                    <li><a class="page" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+        </header>
+    </div>
+
+    <!-- =========================================================================================================== -->
+    
+    <body>
+        <div class="pageContainer">
+
+            <!-- Poster & banner-->
+            <div class="titlehomepage">
+                <p>Online Message</p>
+                <img src="images/contact1.jpg" alt="Online Message">
+            </div>
+    
+            <!-- =========================================================================================================== -->
+        
+            <!--Online Message-->
+            <div class="online_message">
+                <form>
+                    <h2>Online Message</h2>
+                    <div class="css">
+                        <h3>You are welcome to ask questions!</h3>
+                        <h5>Please complete the steps below and we'll reply to you as soon as possible, thank you for your attention!</h5>
+                    
+                        <p>
+                            <label for="FamilyName">Family Name<span>*</span></label><br>
+                            <input type="text"  class="message_input" value="" placeholder="your family name" maxlength="40" id="familyName">
+                        </p>
+                
+                        <p>
+                            <label for="GivenName">Given Name</label><br>
+                            <input type="text" class="message_input" value="" placeholder="your given name" maxlength="40" id="givenName">
+                        </p>
+                    
+                        <p>
+                            <label for="Email">Email Address<span>*</span></label><br>
+                            <input type="text" class="message_input" value="" placeholder="your email addres" maxlength="40" id="emailAddress">
+                        </p>
+                    
+                        <p>
+                            <label for="Mobile">Mobile Number</label><br>
+                            <input type="text" class="message_input" value="" placeholder="your mobile number" maxlength="12" id="mobileNumber">
+                        </p>
+
+                        <p>
+                            Type of information<span>*</span><br>
+                            <label><input type="radio" name="typeOption" checked="checked">Games</label>
+                            <label><input type="radio" name="typeOption">Price</label>
+                            <label><input type="radio" name="typeOption">Improvment</label>
+                            <label><input type="radio" name="typeOption">Job Search</label>
+                            <label><input type="radio" name="typeOption">Else</label>
+                        </p>
+
+                        <p>
+                            <label for="comment">Message Content:<span>*</span></label><br>
+                            <textarea class="message_input" cols="70" rows="4" id="comment"></textarea>
+                        </p>
+
+                        <p>
+                            <!-- Put "Buy Now" and "Cancel" button -->
+                            <input type="button" value="submit" class="button1" onclick="test1()">
+                            <input type="button" value="Cancel" class="button1" onclick="deleteText()">
+                        </p>
+                    </div>
+                    
+                    <!--the Warning Information-->
+                    <div class="warning">
+                        <p><strong>Warning! </strong>Please check the information carefully to ensure that the information is accurate.</p>
+                    </div>
+                </form>
+            </div>
+
+            <!--Back to home page button-->
+            <div class="backhome">
+                <a href="index.html">Return to Home Page</a>
+            </div> 
+
+            <!-- =========================================================================================================== -->
+
+            <!--Footer-->
+            <footer>
+                <div class="footerer">
+                    <p>&copy; 2022 <span id="companyName">H.X. Nintendo</span></p>
+                    <p>Phone us: 1880 857 857</p>
+                    <p>Email us: hxnintendo@email.com.au</p>
+                </div>
+            </footer>
+
+        </div>
+    </body>
+
+</html>

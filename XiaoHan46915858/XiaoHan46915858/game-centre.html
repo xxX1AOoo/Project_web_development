@@ -1,0 +1,244 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Game Centre</title>
+		<!-- Add the link to the stylesheet -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/game-centre.css">
+		<link rel="stylesheet" href="css/responsive.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="Xiao HAN">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="An interactive informational website about Nintendo Games">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Add the JavaScript files -->
+        <script defer src="js/script.js"></script>    
+	</head>
+
+     <!--Header - logo & menu bar-->
+     <div class="headercontainer">
+        <header>
+            <div class="logo" >
+                <a href="index.html">
+                <img src="images/h-x-nintendo-logo.jpg" alt="H.X. Nintendo Logo">
+                </a>
+            </div>
+            
+            <nav class="homemenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="news-events.html">News</a></li>
+                    <li><a class="page" href="game-centre.html">Games</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+        </header>
+    </div>
+
+    <!-- =========================================================================================================== -->
+    
+    <!--Loading Page-->
+    <body onload="loading()">
+        <section>
+            <section id="loadPage">
+                <img src="images/bean.gif" alt="loading" id="loading">
+                Loading Page ... 
+            </section>
+        </section>
+
+        <!-- =========================================================================================================== -->
+
+        <div class="pageContainer">
+            <!-- Poster & banner-->
+            <div class="titlehomepage">
+                <p>Game Centre</p>
+                <img src="images/game-centre1.jpg" alt="Game Centre">
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--Games Menu-->
+            <div class="menu_container">
+                <h2>Game Centre</h2>
+                <div class="menu">
+                    <h3>Let's Switch and Play!</h3>
+                    <nav class="game_menu"> <!-- start of "menu" nav -->
+                        <img src="images/game-centre2.jpg" id="menuProduct1" alt="Kirby and the Forgotten Land" onclick="selectGame1()"> 
+                        <img src="images/game-centre3.jpg" id="menuProduct2" alt="Super Mario Odyssey" onclick="selectGame2()">
+                        <img src="images/game-centre4.jpg" id="menuProduct3" alt="Animal Crossing New Horizons" onclick="selectGame3()">
+                        <img src="images/game-centre5.png" id="menuProduct4" alt="The Legend of Zelda: Breath of the Wild" onclick="selectGame4()">    
+                    </nav> <!-- end of the "menu" nav -->
+                </div>
+            </div>
+
+            <!-- =========================================================================================================== -->
+        
+            <!--Information cards of games-->
+            <!--game card 1-->
+            <div id="game1" class="game_intro">
+                <div class="containter">
+                    <div class="game_left">
+                        <div class="game_image">
+                            <img src="images/game-centre6.jpg" alt="Kirby and the Forgotten Land">
+                        </div>
+                    </div>
+
+                    <div class="game_right">
+                        <h2 class="game_name">Kirby and the Forgotten Land</h2>
+                        <div class="game_description">
+                            <h3>Description:</h3>
+                            Take control of Kirby, the mighty pink puffball, and explore
+                            a mystery environment filled with abandoned structures 
+                            from a bygone civilization—including a shopping mall?! Use
+                            enemy abilities such as Sword and Ice to fight and explore 
+                            your environment! What adventure is in store for Kirby? 
+                            Take a deep breath and prepare for a once-in-a-lifetime trip!
+                        </div>
+                    </div>
+                </div>
+                <div class="game_bottom">
+                    <p>
+                        <h3>Features:</h3>
+                        Join Kirby on a magical trip via a wonderful 3D platforming game.<br>
+                        Explore a fascinating environment filled with abandoned ruins and relics from a bygone era.<br>
+                        Copy the abilities of your foes and use them to attack and explore.<br>
+
+                    </p>
+                </div>
+            </div>
+
+            <!-- =========================================================================================================== -->
+            
+            <!--game card 2-->
+            <div id="game2" class="game_intro">
+                <div class="containter">
+                    <div class="game_left">
+                        <div class="game_image">
+                            <img src="images/game-centre7.jpg" alt="Super Mario Odyssey">
+                        </div>
+                    </div>
+
+                    <div class="game_right">
+                        <h2 class="game_name">Super Mario Odyssey</h2>
+                        <div class="game_description">
+                            <h3>Description:</h3>
+                            Join Mario on a big 3D voyage throughout the world, 
+                            collecting Moons to power up your airship, the Odyssey, 
+                            and save Princess Peach from Bowser's wedding plans!
+                            Mario has new moves thanks to heroic, hat-shaped 
+                            Cappy, which will make you reconsider his conventional 
+                            run-and-jump action. To progress through the game and 
+                            find tonnes of hidden items, use captured cohorts as 
+                            such monsters, objects, and animals. If you want to play 
+                            with a friend, simply hand them a Joy-Con controller!
+                        </div>
+                    </div>
+                </div>
+                <div class="game_bottom">
+                    <p>
+                        <h3>Features:</h3>
+                        As you try to save Princess Peach from Bowser's nefarious wedding plans, explore amazing new locations like 
+                        skyscraper-packed New Donk City to your heart's content, and run into familiar friends and opponents.
+                        There are a plethora of entertaining and unexpected ways to engage with your surroundings.
+                        Give a Joy-Con controller to a friend to enjoy multiplayer with: Mario is controlled by Player 1, while Cappy, 
+                        Mario's new ally, is controlled by Player 2.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- =========================================================================================================== -->
+            
+            <!--game card 3-->
+            <div id="game3" class="game_intro">
+                <div class="containter">
+                    <div class="game_left">
+                        <div class="game_image">
+                            <img src="images/game-centre8.jpg" alt="Animal Crossing New Horizons">
+                        </div>
+                    </div>
+
+                    <div class="game_right">
+                        <h2 class="game_name">Animal Crossing New Horizons</h2>
+                        <div class="game_description">
+                            <h3>Description:</h3>
+                            In Animal Crossing: New Horizons, you can explore, develop,
+                            and personalise your own paradise on a deserted island. 
+                            Natural resources abound on your island vacation, which 
+                            can be exploited to make everything from tools to the creature 
+                            comforts. You can go bug hunting early in the morning, 
+                            beautify your paradise all day, or watch the sunset on the 
+                            beach while fishing in the water. Because the time of day and 
+                            season correspond to actual life, each day on your island is an 
+                            opportunity to check in and discover fresh surprises all year.
+                        </div>
+                    </div>
+                </div>
+                <div class="game_bottom">
+                    <p>
+                        <h3>Features:</h3>
+                        On a lonely island teeming with possibilities, create your own community from the ground up.<br>
+                        Customize your character, home, furnishings, and even the environment itself to make it your own unique vacation.<br>
+                        Gather materials to make everything from furniture to tools! Then, take what you've made and add a personal touch to your island.<br>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- =========================================================================================================== -->
+            
+            <!--game card 4-->
+            <div id="game4" class="game_intro">
+                <div class="containter">
+                    <div class="game_left">
+                        <div class="game_image">
+                            <img src="images/game-centre9.jpg" alt="The Legend of Zelda: Breath of the Wild">
+                        </div>
+                    </div>
+
+                    <div class="game_right">
+                        <h2 class="game_name">The Legend of Zelda: Breath of the Wild</h2>
+                        <div class="game_description">
+                            <h3>Description:</h3>
+                            Nintendo's The Legend of Zelda: Breath of the Wild is the 
+                            company's next epic boundary-breaking adventure. The game 
+                            ushers in a new era for the brand, with fresh challenges and 
+                            surprises awaiting players at every turn, as well as unprecedented 
+                            freedom to explore the vast universe of this open-world adventure.
+                        </div>
+                    </div>
+                </div>
+                <div class="game_bottom">
+                    <p>
+                        <h3>Features:</h3>
+                        As he investigates his surroundings, Link must be resourceful. Players must become acquainted with their surroundings 
+                        in order to locate weapons or gather them from slain adversaries. Food keeps Link's hearts beating and can offer him a 
+                        momentary boost or ability to keep him going.
+                    </p>
+                </div>
+            </div>
+
+            <!--Back to home page button-->
+            <div class="backhome">
+                <a href="index.html">Return to Home Page</a>
+            </div> 
+
+            <!-- =========================================================================================================== -->
+        
+            <!--Footer-->
+            <footer>
+                <div class="footerer">
+                    <p>&copy; 2022 <span id="companyName">H.X. Nintendo</span></p>
+                    <p>Phone us: 1880 857 857</p>
+                    <p>Email us: hxnintendo@email.com.au</p>
+                </div>
+            </footer>
+
+        </div>
+    </body>
+
+</html>

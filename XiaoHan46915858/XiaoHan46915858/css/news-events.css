@@ -1,0 +1,68 @@
+/*Stylesheet author: Xiao HAN*/
+/* news-events.css*/
+
+.about_us{
+    width: 65vw;
+    margin: 0 auto;
+    margin-top: 3vw;
+}
+
+.newsbox a{
+    display: block;
+    height: 8.5vw;
+    padding: 1.5vw;
+    border: 2px solid #A569BD;
+    margin-bottom: 1.5vw;
+    text-decoration: none;
+    background-color: #F4ECF7;
+    border-radius: 2vw;
+    animation-name: newsShow;
+    animation-duration: 4s;
+    position: relative;
+}
+
+/*https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp*/
+@keyframes newsShow {
+    from {left: 20%;}
+    to {left: 0%;}
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.newsbox h2{
+    font-size: 2vw;
+    margin-bottom: 2vw;
+}
+
+.newsbox b,.newsbox img{
+    display: block;
+    width: 15vw;
+    height: 8.5vw;
+    float: left;
+}
+
+.newsbox b{
+    overflow: hidden;
+    margin-right: 1.5vw;
+}
+
+.newsbox img{
+    margin: 0;
+    transition: all 0.5s;
+    border-radius: 2vw;
+}
+
+.newsbox a:hover img{
+    transform: scale(1.1);
+    /*https://www.w3schools.com/css/css3_2dtransforms.asp*/
+}
+
+.newsbox h3{
+    font-weight: normal;
+    text-overflow: ellipsis;
+    font-size: 1.3vw;
+}
+
+.newsbox a:hover h3{
+    color: #A569BD;
+}

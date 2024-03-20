@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px){
+    footer{
+        height: 100px;
+        font-size: large;
+        position: static;
+    }
+
+    #newsLeft a{
+        margin-bottom: 10vw;
+    }
+}

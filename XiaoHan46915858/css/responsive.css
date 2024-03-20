@@ -1,0 +1,254 @@
+/*Stylesheet author: Xiao HAN*/
+/* responsive.css*/
+
+@media screen and (max-width: 768px) {
+    html{
+        height:100vh;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .aboutus{
+        height: 400px;
+    }
+
+    .aboutus p{
+        font-size: 1rem;
+    }
+
+    #newsLeft{
+        width: 100%;
+        margin-bottom: 5%;
+        height: auto;
+    }
+
+    #newsRight{
+        width: 100%;
+        float: none;
+        height: 60%;
+    }
+
+    #newsCentre{
+        height: 500px;
+        width: 100%;
+    }
+
+    .aboutus h2{
+        font-size: 5vw;
+    }
+
+    .aboutus a{
+        width: 20vw;
+        height: 6vw;
+        font-size: 3vw;
+        padding-top: 3%;
+    }
+
+
+    #newsRight a{
+        width: 20vw;
+        height: 6vw;
+        font-size: 3vw;
+        padding-top: 3%;
+    }
+
+    footer{
+        height: 100px;
+        font-size: large;
+        width: 100%;
+    }
+
+    footer p{
+        font-size: 3vw;
+    }
+
+
+    .about_us{
+        width: 100% !important;
+        height: auto;
+        text-align: center;
+    }
+    
+    .aboutinfor h2{
+        font-size: 6vw !important; 
+    }
+
+    .aboutinfor p{
+        font-size: 3vw !important;
+        text-align: center !important;
+        width: 90%;
+        padding-left: 2%;
+        line-height: 3em !important;
+
+    }
+
+    .aboutinfor{
+        width: 100% !important;
+    }
+
+    .backhome a{
+        width: 20vw;
+        height: 10vw;
+        font-size: 3vw;
+        padding-top: 3%;
+    }
+
+    .newsbox a{
+        margin-top: 1%;
+        height: auto;
+    }
+
+    .online_message{
+        width: 100%;
+        height: auto;
+        margin-top: 10%;
+
+    }
+
+    .online_message h3, h5{
+        font-size: 5vw;
+    
+    }
+
+    .online_message h2{
+        font-size: 8vw;
+    }
+
+    .online_message p{
+        font-size: 5vw;
+    }
+
+    .message_input{
+        width: 60%;
+        height: 7vw !important;
+    }
+    
+    .online_message input[type="text"]{
+
+    }
+
+    .online_message input[type="button"]{
+        width: 30%;
+        height: 10vw;
+        font-size: 3vw;
+    }
+
+    .logo img{
+        width: 35%;
+    }
+
+    .newsbox h2{
+        font-size: 10vw;
+    }
+    .titlehomepage p{
+        font-size: 5vw;
+        width: 40%;
+        height: 10%;
+        margin-left: 30%;
+        margin-top: 4%;
+    }
+
+    .newsbox img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .newsbox b{
+        width: 100%;
+        height: 50%;
+    }
+
+    .game_menu img{
+        width: 18%;
+    }
+
+    .containter{
+        flex-flow: column;
+        height: auto;
+    }
+
+    .game_right{
+        border-left: none;
+        border-top: #A569BD dashed 3px;
+    }
+
+    .game_name{
+        font-size: 5vw;
+    }
+
+    .game_image img{
+        width: 100%;
+        height: 100%;
+        transform:none;
+    }
+
+    .game_image{
+        width: 92%;
+    }
+
+    .game_description{
+        font-size: 3vw;
+    }
+    
+    .game_bottom{
+        font-size: 3vw;
+    }
+
+    .game_intro{
+        margin-top: 6%;
+    }
+
+    #upcomingGames{
+        margin-right: 30%;
+    }
+    
+    .homemenu{
+        display: none;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #icon{
+        display: block;
+    }
+
+    .homemenu ul li{
+        width: 100%;
+        margin-top: 8vw;
+        border-bottom: #A569BD solid 3px;
+    }
+
+    .homemenu li a{
+        font-size: 7vw;
+        margin-left: 8vw;
+        margin-top: 1vw;
+        padding: 0%;
+    }
+
+    #loading{
+        position: absolute; 
+        top: 35%;
+        left: 30%;
+    }
+
+    #loadPage{
+        padding-top: 3vh;
+    }
+
+    .newsbox h3{
+        font-size: 5.3vw;
+    }
+
+    #newsLeft .date{
+        width: 20%;
+        height: 14vw;
+    }
+
+    #newsLeft a{
+        padding: 6%;
+    }
+
+    #newsLeft .date span{
+        margin-top: 2.5vw;
+    }
+}

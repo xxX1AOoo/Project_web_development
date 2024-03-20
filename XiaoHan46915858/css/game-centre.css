@@ -1,0 +1,150 @@
+/*Stylesheet author: Xiao HAN*/
+/* game-centre.css*/
+
+.menu_container{
+    width: 65vw;
+    margin: 0 auto;
+    margin-top: 3vw;
+    position: relative;
+}
+
+.menu_container h2{
+    font-size: 2vw;
+    margin-bottom: 1.5vw;
+}
+
+.menu{
+    display: block;
+    height: 20vw;
+    padding: 1.5vw;
+    border: 2px solid #A569BD;
+    margin-bottom: 1.5vw;
+    text-decoration: none;
+    background-color: #F4ECF7;
+    border-radius: 2vw;
+    margin-left: -2%;
+}
+
+.game_menu img{
+    width: 21%;
+    height: auto;
+    display: inline;
+	margin-left: 2%;
+	border: 2px solid #A569BD;
+	transform: rotate(-8deg);
+	/* adapted from: https://www.w3schools.com/csS/css3_shadows_box.asp */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor: pointer;
+    margin-top: 2%;
+}
+
+.menu h3{
+    text-align:center;
+}
+
+.game_intro{
+    width: 65vw;
+    margin: 0 auto;
+    margin-top: 5vw;
+    position: relative;
+    display: block;
+    height: auto;
+    padding: 1.5vw;
+    border: 2px solid #A569BD;
+    margin-bottom: 1.5vw;
+    text-decoration: none;
+    background-color: #F4ECF7;
+    border-radius: 2vw;
+}
+
+.game_name{
+    font-size: 24pt;
+    margin-top: 0vw;
+    width: 100%;
+    margin-left: 1%;
+    text-align: center;
+}
+
+
+.game_image{
+    width: 80%;
+    height: auto;
+}
+
+.game_image img{
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+	transform: rotate(-5deg);
+	margin-left: 2vw;
+}
+
+.game_description{
+    height: 100%;
+    margin-top: 1vw;
+    padding: 2%;
+    font-size: 1vw;
+}
+
+.game_left{
+    flex: 1;
+    height: 100%;
+}
+
+.game_right{
+    flex: 1;
+    border-left: #A569BD dashed 3px;
+}
+
+.game_bottom{
+   width: 100%;
+   margin-top: 4%;
+   font-size: 1vw;
+}
+
+#game2{
+    display: none;
+}
+
+#game3{
+    display: none;
+}
+
+#game4{
+    display: none;
+}
+
+.containter{
+    width: 100%;
+    display: flex;
+    height: 40%;
+}
+
+#loading{
+    position: absolute; 
+    top: 35%;
+    left: 45%;
+}
+
+#loadPage{
+    text-align: center;
+    font-size: large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    padding: 2%;
+    color: #F4D03F;
+    transition: all 0.5 ease;
+    visibility: visible;
+}
+
+body{
+    background-color: #A569BD;
+}
+
+.pageContainer{
+    display: none;
+}
+
+.headercontainer{
+    display: none;
+}

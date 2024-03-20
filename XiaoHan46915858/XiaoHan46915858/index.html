@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>H.X. Nintendo</title>
+		<!-- Add the link to the stylesheet -->
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/indexResponsive.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="Xiao HAN">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="An interactive informational website about Nintendo Games">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--https://www.w3schools.com/howto/howto_js_mobile_navbar.asp-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Add the JavaScript files -->
+        <script defer src="js/script.js"></script>    
+	</head>
+
+    <!--Header - logo & menu bar-->
+    <div class="headercontainer">
+        <header>
+            <div class="logo" >
+                <a href="index.html">
+                <img src="images/h-x-nintendo-logo.jpg" alt="H.X. Nintendo Logo">
+                </a>
+            </div>
+            
+            <nav class="homemenu">
+                <ul>
+                    <li><a class="page" href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="news-events.html">News</a></li>
+                    <li><a href="game-centre.html">Games</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+        </header>
+    </div>
+
+    <!-- =========================================================================================================== -->
+    
+    <body>
+        <div class="pageContainer">
+
+            <!-- Poster & banner-->
+            <div class="titlehomepage">
+                <p>H.X. NINTENDO</p>
+                <img src="images/home1.jpg" alt="H.X. NINTENDO">
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--Upcoming Games-->
+            <div class="movingslides">
+                <div class="upcoming_games">
+                    <ul>
+                        <li><img src="images/home2.png" alt="Kirby and the Forgotten Land"></li>
+                        <li><img src="images/home3.jpg" alt="Animal Crossing New Horizons"></li>
+                        <li><img src="images/home4.jpg" alt="Splatoon 2"></li>
+                        <li><img src="images/home5.jpg" alt="Super Mario Odyssey"></li>
+                        <li><img src="images/home6.jpg" alt="The Legend of Zelda: Breath of the Wild"></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- =========================================================================================================== -->
+            
+            <!--About Us-->
+            <div class="aboutus">
+                <h2>About Us</h2>
+                <p>H.X. Nintendo was created in 2018, with the website 
+                    officially created in 2019. and is quickly becoming a mainstream 
+                    online game strategy in Australia in 2021.</p>
+                <p> It is dedicated to providing customers with the latest news about 
+                    Nintendo, game introductions, question and answer sessions...</p>
+                <a href="about-us.html">Learn More</a>
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--News Centre-->
+            <div id="newsCentre">
+                <h2 id="newsTitle">News Centre</h2>
+                <div id="newsLeft">
+                    <a href="news-events.html">
+                        <div class="date"><span>04</span>2022-06</div>
+                        <p>Enter the Splatlands When Splatoon 3 Surfaces on Sept. 9...</p>
+                    </a>
+
+                    <a href="news-events.html">
+                        <div class="date"><span>04</span>2022-06</div>
+                        <p>Rocket League introduces limited-time Knockout mode...</p>
+                    </a>
+
+                    <a href="news-events.html">
+                        <div class="date"><span>03</span>2022-06</div>
+                        <p>Unleash the power of the dark side in STAR WARS: The Force Unleashed!...</p>
+                    </a>
+
+                    <a href="news-events.html">
+                        <div class="date"><span>01</span>2022-06</div>
+                        <p>Gracie graces the campsite this May in Animal Crossing: Pocket Camp...</p>
+                    </a>
+                </div>
+                <div id="newsRight">
+                    <a href="news-events.html">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- =========================================================================================================== -->
+    
+            <!--Footer-->
+            <footer>
+                <div class="footerer">
+                    <p>&copy; 2022 <span id="companyName">H.X. Nintendo</span></p>
+                    <p>Phone us: 1880 857 857</p>
+                    <p>Email us: hxnintendo@email.com.au</p>
+                </div>
+            </footer>
+
+        </div>
+    </body>
+    
+</html>
