@@ -1,0 +1,98 @@
+/*Stylesheet author: FEARLESS Group*/
+/* contact.css*/
+
+html{
+    height: 100%;
+}
+
+.online_message{
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 3vw;
+    position: relative;
+}
+
+.online_message::before{
+    /*https://www.sitepoint.com/css3-transform-background-image/*/
+    content: "";
+    background-image: url(../images/contact02.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 3%;
+    z-index: -1;
+    opacity: 0.35;
+    border-radius: 2vw;
+}
+
+.online_message h2{
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+
+.online_message h3,h5{
+    color: #808B96;
+    width: 75%;
+}
+
+.message_input{
+    width: 35vw;
+    outline: none;
+    border: 2px solid #A569BD;
+    background-color: #F4ECF7;
+    margin: 0.5vw 0;
+}
+
+.online_message span{
+    color: red;
+}
+
+.online_message input[type=text]{
+    height: 2vw;
+}
+
+.online_message input[type=radio]{
+    width: auto;
+    height: auto;
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+}
+
+.online_message input[type=button]{
+    border: none;
+    background-color: #3DED97;
+    color: #000000;
+    cursor: pointer;
+    width: 8vw;
+    height: 2vw;
+    margin: 0 auto;
+    display: inline;
+    text-align: center;
+    font-family: Georgia;
+    font-size: 1.2vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    border-radius: 10vw;
+}
+
+.online_message input[type=button]:hover{
+    background-color: #019528;
+    color: #FFFFFF;
+}
+
+/*Warning styles from https://www.w3schools.com/howto/howto_css_notes.asp */
+.warning {
+    background-color: #ffffcc;
+    border-left: 10px solid #ffeb3b;
+}
+
+.css{
+    margin-left: 20%;
+}
+
+.button1{
+    margin-left: 50%;
+}

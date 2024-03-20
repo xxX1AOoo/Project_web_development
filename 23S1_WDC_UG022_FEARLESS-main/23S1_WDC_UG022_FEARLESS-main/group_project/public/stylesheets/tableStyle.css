@@ -1,0 +1,234 @@
+#customers {
+  width: 100%;
+  
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  border-radius: 3px;
+  overflow: hidden;
+
+}
+
+#customers tbody {
+  /* height: 440px; */
+  overflow: auto;
+}
+
+#customers td {
+  border: 1px solid #ddd;
+  white-space: nowrap; /* No line breaks */
+  overflow: hidden; /* Overflow Hiding */
+  text-overflow: ellipsis; /* Show ellipses */
+  max-width: 200px; /* Define Text Box Width */
+  text-align: center;
+  height: 80px !important;
+  color: #606266;
+  cursor: pointer; /* Style when hovering the mouse */
+}
+
+#customers tr:hover {
+  background: #fafafa;
+}
+
+#customers th {
+  border: 1px solid #ddd;
+  /* padding: 20px;
+     */
+  color: #909399;
+  background: #eaeaea;
+  text-align: center;
+  height: 40px !important;
+}
+
+.tableAdd {
+  font-size: 12px;
+  padding: 3px 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.tableAdd:hover {
+  background: #fff;
+}
+
+.tableAdd:hover {
+  background: #fff;
+}
+
+ .tableSelect {
+  height: 26px;
+  width: 100px;
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.headerbtn .lable {
+  font-size: 13px;
+}
+
+#customers .modify {
+  font-size: 12px;
+  padding: 3px 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#customers .delete {
+  font-size: 12px;
+  padding: 3px 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #ff6a6a;
+  cursor: pointer;
+}
+
+#customers .delete:hover {
+  background: #ff8f8f;
+}
+
+#customers .modify:hover {
+  background: #fff;
+}
+
+/* Paging Style */
+.page {
+  height: 40px;
+  overflow: hidden;
+  margin-top: 10px;
+  display: none;
+  padding: 3px 0 0 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.page .page-content {
+  /* height: 40px; */
+  float: left;
+  margin-left: 10px;
+}
+
+.page .page-content li {
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  background: rgb(255, 255, 255);
+  color: black;
+  text-align: center;
+  line-height: 30px;
+  float: left;
+  margin: 0 5px;
+  cursor: pointer;
+  margin-top: 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  border: #cecece solid 1px;
+}
+
+.page .page-content li :hover {
+  background: rgb(240, 240, 240);
+}
+
+.page .page-content li.checked {
+  background: #ddd;
+  color: red;
+}
+
+.page span {
+  /* margin-top: 3px; */
+  width: 50px;
+  height: 30px;
+  line-height: 24px;
+  border-radius: 3px;
+  font-size: 12px;
+  background: rgb(255, 255, 255);
+  color: #ddd;
+  border: solid #ddd 1px;
+  text-align: center;
+  padding: 3px 5px;
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.page span:hover {
+  background: rgb(240, 240, 240);
+}
+
+.page span.checked {
+  background: #e3e3e3;
+  color: #666;
+}
+
+
+
+
+/*    add page      */
+
+.content {
+  display: grid;
+  /* padding-bottom: 120px; */
+  grid-gap: 24px 24px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+
+.content .col-input {
+  /* width: 100vw; */
+}
+
+
+.content label {
+  font-size: 16px;
+  width: 150px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.content .col-input input {
+
+  height: 30px;
+  outline: none;
+  border: solid 1px #ddd;
+  border-radius: 5px;
+  transition: .5s;
+  text-indent: 10px;
+  font-size: 14px;
+}
+
+.content .col-input input:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+}
+
+.content .col-image [type="file"] {
+  opacity: 0;
+  float: right;
+  width: 0;
+  height: 33px;
+  vertical-align: bottom;
+}
+
+.content .col-image div {
+  display: inline-block;
+  border: 1px solid #ddd;
+  width: 120px;
+  height: 120px;
+  vertical-align: bottom;
+  box-sizing: border-box;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+.content .col-image div img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center center;
+ 
+}

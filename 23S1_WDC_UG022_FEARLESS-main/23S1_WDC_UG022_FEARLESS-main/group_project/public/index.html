@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FEARLESS Club</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="FEARLESS Group">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="An interactive informational website for Student Club System">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--https://www.w3schools.com/howto/howto_js_mobile_navbar.asp-->
+
+        <!-- Add the link to the stylesheet -->
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="stylesheets/user.css">
+        <link rel="stylesheet" href="stylesheets/signup.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- Add the JavaScript files -->
+        <script defer src="javascripts/script.js"></script>
+        <script src="javascripts/login.js"></script>
+        <!--google--><script src="https://accounts.google.com/gsi/client" async defer></script>
+	</head>
+
+       <!--Header - logo & menu bar-->
+
+
+    <!-- =========================================================================================================== -->
+
+    <body>
+        <div class="headercontainer">
+            <header>
+                <div class="logo" >
+                    <a href="index.html">
+                    <img src="images/fearless_logo.png" alt="FEARLESS Logo">
+                    </a>
+                </div>
+                <div class="head">
+                    <img src="images/head.jpg" alt="head" id="userfile-head" onclick="toUser()">
+                </div>
+                <nav class="homemenu">
+                    <ul class="horizontal">
+                        <li><a class="page" href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="clubs.html">Clubs</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+<!-------------------------------------------------login----------------------------------------------------------------->
+            <button type="submit" class="login_bt" onclick="popison()">Login</button>
+
+            <!-- pop-up window -->
+            <div class="popup ajax-loader" id="turnonpop">
+
+                <div id="close"><button type="button" onclick="closepopison()">&times;</button></div>
+
+                <div id="clublogo"><img src="images/clublogo.png" alt="close"></div>
+
+                <form>
+                    <div class="mb-3" style="margin-bottom: 10px;">
+                      <label for="useraccount" class="account">User Account</label>
+                      <div><input type="text" class="form-control-c" id="useraccount" placeholder="username"></div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="userpassword" class="password">Password</label>
+                      <div><input type="password" class="form-control-p" id="userpassword" placeholder="password"></div>
+
+                      <div id="signup">
+                        <p>Not a member?</p>
+                        <button type="button" id="sign-up" onclick="signup_pop()">Sign up</button>
+                      </div>
+
+                      <div class="mb-3 form-check">
+                        <input type="checkbox" class="check-box" id="Checkb">
+                        <label class="form-check" for="Checkb">Remeber me</label>
+                      </div>
+
+                      <div id="forgot"><button type="button">Forgot password ?</button></div>
+                    </div>
+                      <div ><button type="button" id="login-bt" onclick="login()">Login</button></div>
+                </form>
+
+                <br>
+
+                 <!--googgle login -->
+                 <div id="g_id_onload"
+                    data-client_id="771788160474-81nmstkc6prok7llkl9q3q4nclfu0qmt.apps.googleusercontent.com"
+                    data-context="signin"
+                    data-ux_mode="popup"
+                    data-callback="google_go"
+                    data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="rectangular"
+                    data-theme="filled_black"
+                    data-text="signin_with"
+                    data-size="small"
+                    data-logo_alignment="left">
+                </div>
+               <!--googgle login -->
+
+            </div>
+<!-------------------------------------------------login----------------------------------------------------------------->
+
+            <i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+        </header>
+    </div>
+
+        <div class="pageContainer">
+
+            <!-- Poster & banner-->
+            <div class="titlehomepage">
+                <p>FEARLESS</p>
+                <img src="images/home01.png" alt="poster-01">
+            </div>
+
+            <!-- =========================================================================================================== -->
+            <!-- Events Part -->
+            <div class="movingslides">
+                <div class="event_news">
+                    <ul>
+                        <li><a href="events.html"><img src="images/kendo_club.png" alt="Kendo Club"></a></li>
+                        <li><a href="events.html"><img src="images/h_club1.jpg" alt="Rugby Club"></a></li>
+                        <li><a href="events.html"><img src="images/fitness_club3.jpg" alt="Fitness Club"></a></li>
+                        <li><a href="events.html"><img src="images/basketball_club.jpg" alt="Basketball Club"></a></li>
+                        <li><a href="events.html"><img src="images/billiards_club.jpg " alt="Billiard Club"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--Clubs Part-->
+            <div id="re_clubs" class="container">
+                <div class="title">
+                    <div>
+                        Recommended Clubs
+                        <small>Top 5 Clubs</small>
+                    </div>
+                </div>
+                <div class="recom_club ">
+                    <div class="left_si fl clearfix">
+                        <div>
+                            <a href="JavaScript:;"><img src="images/h_club1.jpg" alt=""></a>
+                            <a href="JavaScript:;"><img src="images/h_club6.jpg" alt="" class="active"></a>
+                        </div>
+                        <div>
+                            <a href="JavaScript:;"><img src="images/h_club2.jpg" alt=""></a>
+                            <a href="JavaScript:;"><img src="images/h_club7.jpg" alt="" class="active"></a>
+                        </div>
+                        <div>
+                            <a href="JavaScript:;"><img src="images/h_club3.jpg" alt=""></a>
+                            <a href="JavaScript:;"><img src="images/h_club9.jpg" alt="" class="active"></a>
+                        </div>
+                        <div>
+                            <a href="JavaScript:;"><img src="images/h_club4.jpg" alt=""></a>
+                            <a href="JavaScript:;"><img src="images/h_club8.jpg" alt="" class="active"></a>
+                        </div>
+                    </div>
+                    <div class="right_si">
+                        <a href="JavaScript:;"><img src="images/h_club5.jpg" alt=""></a>
+                        <a href="JavaScript:;"><img src="images/h_club10.jpg" alt="" class="active"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--About Us-->
+            <div class="aboutus">
+                <h2>About Us</h2>
+                <p> With more than 130 clubs at the University of Adelaide, there is a crowd for everyone.You don’t need to be on campus to experience club life. Clubs are open to everyone, so you can join and engage with our communities virtually from the comfort of your own lounge room.</p>
+                <p>Whether you're a gamer, an actor, a debater or a dancer; a singer, a writer or simply love yoga. Want to challenge a chess champion or quaff a cab sav; looking to learn a new language or taste a new tea.No matter where you come from or what you're into, the University of Adelaide has a club for you.</p>
+                <a href="about.html">Learn More</a>
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--Footer-->
+            <footer>
+                <div class="footerer">
+                    <p>&copy; 2023 <span id="webName">FEARLESS Student Clubs</span></p>
+                    <p>Phone us: 434990589</p>
+                    <p>Email us: FARELESSclub@email.com.au</p>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

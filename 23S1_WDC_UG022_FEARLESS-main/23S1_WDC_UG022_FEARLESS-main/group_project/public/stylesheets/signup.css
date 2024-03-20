@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins' ,sans-serif;
+    }
+
+.win_container{
+    width: 100%;
+    height: 100vh;
+    background-color: #23478f;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+.signup{
+    max-width: 700px;
+    width:100%;
+    background: #ffffff;
+    border-radius: 6px;
+    position:absolute;
+    /*can change depends on position (top)*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    text-align:left;
+    padding:25px 30px;
+    /*text color*/
+    color: black;
+    visibility: visible;
+    transition: transform 0.4s, top 0.4s;
+    border: 2px solid  black;
+    /*could change it back to black*/
+    box-shadow: 1px 1px 100px 10px  #df75f3;;
+    /*background-color:#e3f2e3;*/
+
+    }
+
+.signup .title{
+    font-size: 25px;
+    font-weight: 500;
+    position:relative;
+}
+
+
+.signup .title::before{
+    content:"";
+    position: absolute;
+    height:3px;
+    width:30px;
+    background: #a4e9a4;
+    left:0;
+    bottom:0;
+    height:3px;
+    width:30px;
+    background: linear-gradient(135deg, #a4e9a4, #962e96);
+
+}
+
+.signup form .user-details{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    /*padding:0px 150px 0px 60px;*/
+    }
+
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2.1 - 20px);
+    }
+
+
+form .user-details .input-box .details{
+    display: block;
+    font-weight: 500px;
+    margin-bottom: 5px;
+    }
+
+
+form .user-details .input-box input{
+    height:45px;
+    width:250px;
+    border-radius: 5px;
+    border: 1px soild #fff;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    }
+
+
+form .user-details .input-box input:focus,
+form .user-details .input-box input:valid{
+    border-color: #962e96;
+
+    }
+
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+    }
+
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    padding: 14px 0;
+    justify-content: space-between;
+    }
+
+
+
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+    }
+
+
+.gender-details .category .dot{
+    height: 18px;
+    width:18px;
+    background-color: #b146b199;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+    }
+
+
+#dot1:checked ~ .category label .fir,
+#dot2:checked ~ .category label .sec,
+#dot3:checked ~ .category label .thi{
+    border-color: #d63fd699;
+    background-color:  #6dff9e;
+
+    }
+
+    form input[type="radio"]{
+    display: none;
+    }
+
+
+form .button{
+    height: 45px;
+    margin: 45px 0;
+    }
+
+form .button input{
+    height: 100%;
+    width:100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius:5px;
+    background: linear-gradient(135deg, #a4e9a4, #962e96);
+    }
+
+
+form .button input:hover{
+    background: linear-gradient(-135deg, #a4e9a4, #962e96);
+    }
+
+@media (max-width: 584px) {
+    .singup{
+        max-width: 15px;
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width:100%;
+    }
+
+    form .gender-details .category{
+        width: 100%;
+    }
+
+    .signup form .user-details{
+        max-height: 300px;
+        overflow: sscroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width:0;
+}
+
+}

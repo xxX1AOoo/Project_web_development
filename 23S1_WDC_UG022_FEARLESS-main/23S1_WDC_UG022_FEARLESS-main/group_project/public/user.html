@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8">
+	<title>User Profile</title>
+	<style>
+		#main {
+			width: 100vw;
+			height: auto !important;
+			overflow: hidden;
+			visibility: visible;
+			margin: auto;
+			margin-top: 0px;
+		}
+
+		#left {
+			width: 20vw;
+
+			float: left;
+			margin-right: 50px;
+		}
+
+		#right {
+			width: 70vw;
+			float: left;
+
+			padding-top: 40px;
+			margin-left: 50px;
+		}
+
+		body {
+			background-image: url(images/background1.jpeg);
+			overflow: auto;
+		}
+	</style>
+	<!-- Include any necessary CSS files -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="stylesheets/user.css">
+	<link rel="stylesheet" href="stylesheets/signup.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/user_profile.css">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="FEARLESS Group">
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="An interactive informational website for Student Club System">
+
+	<!-- Include any necessary JavaScript files -->
+	<script src="javascripts/user_profile.js"></script>
+	<script src="javascripts/login.js"></script>
+	<script>
+		function testdata(obj) {
+			document.getElementById('right').innerHTML = obj;
+		}
+	</script>
+</head>
+
+
+<body onload="userInfo(); userClubs(); userPosts(); renderAdminLi()">
+
+	<div class="headercontainer">
+		<header>
+			<div class="logo">
+				<a href="index.html">
+					<img src="images/fearless_logo.png" alt="FEARLESS Logo">
+				</a>
+			</div>
+			<div class="head">
+				<img src="images/head.jpg" alt="head" id="userfile-head" onclick="toUser()">
+			</div>
+			<nav class="homemenu">
+				<ul class="horizontal">
+					<li><a class="page" href="index.html">Home</a></li>
+					<li><a href="events.html">Events</a></li>
+					<li><a href="clubs.html">Clubs</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<button type="submit" class="login_bt" onclick="logout()">Logout</button>
+
+			<i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+		</header>
+	</div>
+
+	<!--Header - logo & menu bar-->
+	<div id="main">
+		<!-- left block -->
+		<div id="left">
+
+			<div class="box">
+				<div class="user_menu">
+					<h3 class="user_links">User Menu</h3>
+				</div>
+				<ul class="user_links" id="user-menu">
+					<li class="user_link" style="cursor: pointer;"><a href="user.html">User profile</a></li>
+
+					<li class="user_link" style="cursor: pointer;" onclick="renderRSVPpage(); renderRSVP()">Events</li>
+
+					<li class="user_link" style="cursor: pointer;" onclick="renderUpdateInfo()">Update Information</li>
+
+					<li class="user_link" style="cursor: pointer;" onclick="renderUpdateAvatar()">Update Avatar</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<!-- right block -->
+		<div id="right">
+			<main class="profile">
+
+				<h1>User Profile</h1>
+
+				<!-- user information & user profile picture -->
+				<section class="user_info">
+
+					<h2>User Information</h2>
+
+					<div class="user_profile" id="user-info">
+						<!-- user profile picture -->
+						<!--<img src="images/cat_profile.jpeg" alt="Profile Picture" id="profile_img" class="profile_picture">-->
+
+						<!-- user information -->
+						<div class="profile_info">
+							<!--
+							<h3 class="profile_info">Demo Name</h3>
+							<p class="profile_info">Email: DemoName@example.com</p>
+							-->
+						</div>
+					</div>
+				</section>
+
+				<!-- user joined clubs -->
+				<section class="clubs">
+					<h2>Clubs</h2>
+					<ul class="clubs_info" id="clubs-ul">
+						<!--
+						<li>
+							<h3><a href="clubs_1.html">Fitness Club</a></h3>
+						</li>
+						-->
+					</ul>
+				</section>
+
+				<!-- user joined clubs -->
+				<section class="clubs">
+					<h2>Posts</h2>
+					<ul class="clubs_info" id="posts-ul">
+						<!--
+						<li>
+							<h3><a href="clubs_1.html">Fitness Club</a></h3>
+						</li>
+						-->
+					</ul>
+				</section>
+
+			</main>
+		</div>
+	</div>
+
+	<footer>
+		<div class="footerer">
+			<p>&copy; 2023 <span id="webName">FEARLESS Student Clubs</span></p>
+			<p>Phone us: 434990589</p>
+			<p>Email us: FARELESSclub@email.com.au</p>
+		</div>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Online Contact</title>
+		<!-- Add the link to the stylesheet -->
+		<link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="stylesheets/user.css">
+        <link rel="stylesheet" href="stylesheets/contact.css">
+        <link rel="stylesheet" href="stylesheets/signup.css">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="FEARLESS Group">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="An interactive informational website for Student Club System">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Add the JavaScript files -->
+        <!--<script defer src="javascripts/script.js"></script>-->
+        <script src="javascripts/login.js"></script>
+        <!--google--><script src="https://accounts.google.com/gsi/client" async defer></script>
+	</head>
+
+    <!--Header - logo & menu bar-->
+
+    <!-- =========================================================================================================== -->
+
+    <body>
+        <div class="headercontainer">
+        <header>
+            <div class="logo" >
+                <a href="index.html">
+                <img src="images/fearless_logo.png" alt="FEARLESS Logo">
+                </a>
+            </div>
+            <div class="head">
+                <img src="images/head.jpg" alt="head" id="userfile-head" onclick="toUser()">
+            </div>
+            <nav class="homemenu">
+                <ul class="horizontal">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a class="page" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+<!-------------------------------------------------login----------------------------------------------------------------->
+<button type="submit" class="login_bt" onclick="popison()">Login</button>
+
+<div class="popup ajax-loader" id="turnonpop">
+    <div id="close"><button type="button" onclick="closepopison()">&times;</button></div>
+    <div id="clublogo"><img src="images/clublogo.png" alt="close"></div>
+
+    <form>
+        <div class="mb-3" style="margin-bottom: 10px;">
+          <label for="useraccount" class="account">User Account</label>
+          <div><input type="email" class="form-control-c" id="useraccount" placeholder="username"></div>
+          <!--<div id="emailHelp" class="account-text">Welcome to our page !</div>-->
+        </div>
+
+        <div class="mb-3">
+          <label for="userpassword" class="password">Password</label>
+          <div><input type="password" class="form-control-p" id="userpassword" placeholder="password"></div>
+
+          <div id="signup">
+            <p>Not a member?</p>
+            <button type="button" id="sign-up" onclick="signup_pop()">Sign up</button>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="check-box" id="Checkb">
+            <label class="form-check" for="Checkb">Remeber me</label>
+          </div>
+
+          <div id="forgot"><button type="button">Forgot password ?</button></div>
+        </div>
+          <div ><button type="button" id="login-bt" onclick="login()">Login</button></div>
+    </form>
+    <br>
+
+                 <!--googgle login -->
+                 <div style="margin-left: 40px;">
+                    <div id="g_id_onload"
+                        data-client_id="771788160474-e77kkaar9juv8l023hm50vtaec1d0vlc.apps.googleusercontent.com"
+                        data-context="signin"
+                        data-ux_mode="popup"
+                        data-login_uri="set_google_login"
+                        data-auto_prompt="false">
+                    </div>
+
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-shape="rectangular"
+                        data-theme="filled_black"
+                        data-text="signin_with"
+                        data-size="small"
+                        data-logo_alignment="left"
+                        data-width="40px">
+                    </div>
+                </div>
+               <!--googgle login -->
+
+</div>
+<!-------------------------------------------------login----------------------------------------------------------------->
+
+            <i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+        </header>
+    </div>
+
+        <div class="pageContainer">
+
+            <!-- Poster & banner-->
+            <div class="titlehomepage">
+                <p>Online Message</p>
+                <img src="images/contact01.jpg" alt="Online Message">
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--Online Contact-->
+            <div class="online_message">
+                <form>
+                    <h2>Online Message</h2>
+                    <div class="css">
+                        <h3>You are welcome to contact to us!</h3>
+                        <h5>Please complete the steps below and we'll reply to you as soon as possible, thank you for your attention!</h5>
+
+                        <p>
+                            <label for="nameId">Name ID<span>*</span></label><br>
+                            <input type="text"  class="message_input" value="" placeholder="your name id" maxlength="40" id="nameId">
+                        </p>
+
+                        <p>
+                            <label for="subject">Subject</label><br>
+                            <input type="text" class="message_input" value="" placeholder="add a subject" maxlength="40" id="subject">
+                        </p>
+
+                        <p>
+                            <label for="emailAddress">Email Address<span>*</span></label><br>
+                            <input type="text" class="message_input" value="" placeholder="your email addres" maxlength="40" id="emailAddress">
+                        </p>
+
+                        <p>
+                            <label for="mobileNumber">Mobile Number</label><br>
+                            <input type="text" class="message_input" value="" placeholder="your mobile number" maxlength="12" id="mobileNumber">
+                        </p>
+
+                        <p>
+                            Type of information<span>*</span><br>
+                            <label><input type="radio" name="typeOption" checked="checked">Clubs</label>
+                            <label><input type="radio" name="typeOption">Membership</label>
+                            <label><input type="radio" name="typeOption">System issues</label>
+                            <label><input type="radio" name="typeOption">Job Search</label>
+                            <label><input type="radio" name="typeOption">Else</label>
+                        </p>
+
+                        <p>
+                            <label for="comment">Message Content:<span>*</span></label><br>
+                            <textarea class="message_input" cols="70" rows="4" id="comment"></textarea>
+                        </p>
+
+                        <p>
+                            <!-- Put "Buy Now" and "Cancel" button -->
+                            <input type="button" value="submit" class="button1" onclick="test1()">
+                            <input type="button" value="Cancel" class="button1" onclick="deleteText()">
+                        </p>
+                    </div>
+
+                    <!--the Warning Information-->
+                    <div class="warning">
+                        <p><strong>Warning! </strong>Please check the information carefully to ensure that the information is accurate.</p>
+                    </div>
+                </form>
+            </div>
+
+            <!--Back to home page button-->
+            <div class="backhome">
+                <a href="index.html">Return to Home</a>
+            </div>
+
+            <!-- =========================================================================================================== -->
+
+            <!--Footer-->
+            <footer>
+                <div class="footerer">
+                    <p>&copy; 2023 <span id="webName">FEARLESS Student Clubs</span></p>
+                    <p>Phone us: 434990589</p>
+                    <p>Email us: FARELESSclub@email.com.au</p>
+                </div>
+            </footer>
+
+        </div>
+
+    </body>
+</html>

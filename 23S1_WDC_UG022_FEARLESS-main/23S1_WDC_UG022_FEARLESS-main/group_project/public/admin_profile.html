@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin system</title>
+
+    <style>
+        #main {
+            width: 100vw;
+            height: auto !important;
+            overflow: hidden;
+            visibility: visible;
+            margin: auto;
+            margin-top: 0px;
+
+        }
+
+        #left {
+            width: 20vw;
+            float: left;
+            margin-right: 50px;
+        }
+
+        #right {
+            width: 70vw;
+            padding: 10px 20px;
+            float: left;
+            position: relative;
+            /* padding-top: 40px;
+            margin-left: 50px; */
+            background: #fff;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+
+        body {
+            background-image: url(images/background1.jpeg);
+        }
+
+        .profile {
+            min-height: 450px;
+            margin-left: 0 !important;
+            margin-top: 10px !important;
+        }
+    </style>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/user.css">
+    <link rel="stylesheet" href="stylesheets/signup.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/user_profile.css">
+    <link rel="stylesheet" href="stylesheets/tableStyle.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="FEARLESS Group">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="An interactive informational website for Student Club System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--https://www.w3schools.com/howto/howto_js_mobile_navbar.asp-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add the JavaScript files -->
+    <script defer src="javascripts/script.js"></script>
+
+    <script>
+        function testdata(obj) {
+            document.querySelector('#right .profile').innerHTML = obj;
+        }
+
+
+    </script>
+</head>
+
+
+<body>
+
+    <div class="headercontainer">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/fearless_logo.png" alt="FEARLESS Logo">
+                </a>
+            </div>
+            <div class="head">
+                <img src="images/head.jpg" alt="head" id="userfile-head" onclick="toUser()">
+            </div>
+            <nav class="homemenu">
+                <ul class="horizontal">
+                    <li><a class="home-page" href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+        </header>
+    </div>
+    <!--Header - logo & menu bar-->
+    <div id="main">
+        <!--Left column-->
+        <div id="left">
+
+            <div class="box">
+                <div class="user_menu">
+                    <h3 class="user_links">Admin Menu</h3>
+                </div>
+                <ul class="user_links">
+
+
+                    <!--
+                    <li class="user_link" style="cursor: pointer;" onclick="testdata(
+                    '<div class=&quot;club_post&quot;>'+
+                    '<h1>RSVP</h1>'+
+                    '<h3>We will be holding activities here, if you are free, please come</h3>'+
+                    '<h3>Time: 6PM 20/05/2023</h3>'+
+                    '<h3>LOCATION: Fitness Center</h3>'+
+                    '<a href=&quot;event_1.html&quot; class=&quot;button&quot;>View more</a>'+
+                    '<div>'
+                    )">RSVP</li> -->
+                    <li class="user_link" style="cursor: pointer;" onclick="UserManagehead()">Manage Users</li>
+                    <li class="user_link" style="cursor: pointer;" onclick="ClubManagehead()">Manage Clubs</li>
+
+                    <li class="user_link" style="cursor: pointer;"><a href="index.html">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--右侧内容-->
+        <div id="right">
+            <div class="headerbtn">
+
+            </div>
+            <main class="profile">
+
+                <h1>Welcome admin page</h1>
+
+
+            </main>
+            <div id="message"></div>
+            <div id="page" class="page"> </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footerer">
+            <p>&copy; 2023 <span id="webName">FEARLESS Student Clubs</span></p>
+            <p>Phone us: 434990589</p>
+            <p>Email us: FARELESSclub@email.com.au</p>
+        </div>
+    </footer>
+
+    <!-- script  -->
+
+    <script src="./javascripts/utils.js"></script>
+
+<script>
+    //initialization message
+    const messageComponent = new messageControl()
+    //This function replaces the double quotes in the incoming string argument with '',
+    // replaces the single quotes with '', and then returns the replaced string
+    function replaceQuotes(str) {
+        return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function convertHtmlToText(html) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        return div.innerText;
+    }
+    // ************************* Manage Users Write it here  ****************************
+
+
+   //Rendering header filter criteria
+    UserManagehead()
+   //Click on the user management module
+    function UserManageClick() {
+        //Obtain the total number to generate pagination
+        ajax({
+            method: "get",
+            url: "/clubs/userCount",
+            dataType: "json",
+            data:{},
+            success: (res) => {
+
+                //Before rendering the pagination, ensure that the dom of the pagination does not exist to avoid rendering 2 or more
+                document.querySelector("#page").innerHTML = ""
+                //Generate pagination based on total number
+                new Page({
+                    el: "#page",
+
+                    data: {
+                        count: res.total,
+                        pagenum: 5,
+                        pageindex: 5
+                    },
+                    callback: function (showpageindex) {
+                        //Get List
+                        getUserData(showpageindex)
+                    }
+                })
+            },
+            error: (err) => {
+                console.log(err)
+            }
+        })
+
+    }
+
+    function UserManagehead() {
+        //Clear table when switching tabs
+        document.querySelector(".headerbtn").innerHTML = ''
+        ajax({
+            method: "get",
+            url: `/clubs/clubsQuery?pageIndex=${1}&pageSize=${99999}`,
+            dataType: "json",
+            success: (res) => {
+
+                let arr = res.data
+                arr.unshift({
+                    clubName: "all",
+                    clubId: ""
+                })
+                //Generate Filter Criteria
+                let str = `<button class="tableAdd" onclick="AddAndModifyUser(${false},2)">AddUser</button> `
+
+                str += `<span><lable class="lable">ClubName: </lable><select id="userClubName" class="tableSelect" onchange="tableUserChange()">`
+                for (let i = 0; i < arr.length; i++) {
+                    str += `<option value="${arr[i].clubId}">${arr[i].clubName}</option>`
+                }
+                str += `</select></span>`
+                //Rendering Filter Criteria
+                document.querySelector(".headerbtn").innerHTML = str
+
+                UserManageClick()
+            },
+            error: (err) => {
+                console.log(err)
+            }
+        })
+
+    }
+
+    //Clubs' Change Event
+    function tableUserChange(e) {
+       //Choose whether to call to retrieve the pagination of list 1 and reset the page number to 1
+        UserManageClick()
+    }
+
+    //获取列表数据
+    function getUserData(pageIndex) {
+        document.querySelector('#right .profile').innerHTML = ""
+        //Obtain the value of the change event for Clubs
+        let clubId = document.querySelector("#userClubName").value
+        ajax({
+            method: "get",
+            url: `/clubs/userQuery?pageIndex=${pageIndex}&pageSize=${5}&clubId=${clubId}`,
+            dataType: "json",
+            success: (res) => {
+                //Requesting data back
+                let data = res.data
+                let dom = ""
+                dom = `<table  id="customers">
+                    <thead>
+                    <tr>
+
+                    <th>Username</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Avatar</th>
+                    <th>Email</th>
+                    <th>Club name</th>
+                    <th>IsAdmin</th>
+                    <th>Operate</th></tr>
+                     </thead>
+                    <tbody>`
+                for (let i = 0; i < data.length; i++) {
+                    dom += `<tr>
+                    <td>${data[i].username}</td>
+                    <td>${data[i].firstName}</td>
+                    <td>${data[i].lastName}</td>
+                    <td><img style="width:70px;height:70px;border-radius:6px; object-fit: cover;
+                    object-position: center center;" src="${data[i].avatar}"/></td>
+                    <td>${data[i].email}</td>
+                    <td>${data[i].clubName}</td>
+                    <td>${data[i].isAdmin == 1 ? 'admin' : 'user'}</td>
+                    <td>
+                    <button class="modify"  onclick=AddAndModifyUser(${JSON.stringify(data[i]).replace(/"/g, "'").replace(/\s/g, '&nbsp;')},1)>Modify</button>
+                    <button class="delete"  onclick="DeleteUser(${data[i].userId})">Delete</button>
+                    </td>`
+                }
+                dom += '</tbody></table>'
+                // let str=JSON.stringify(row).replace(/"/g, "'")
+                testdata(dom)
+                // document.querySelector("#page").innerHTML()
+                document.querySelector("#page").style.display = "flex"
+            },
+            error: (err) => {
+                console.log(err)
+            }
+        })
+
+    }
+
+    //Manage Users Add user
+    function AddAndModifyUser(row, index) {
+        document.querySelector(".headerbtn").innerHTML = "<button class='tableAdd' onclick=' UserManagehead()' >return</button>"
+        document.querySelector("#page").innerHTML = ""
+
+        let str = `
+        <div class="content">
+            <div class="col-input">
+            <input type="hidden" id="UserUserId" />
+           <label>username: </label><input type="text" id="UserUsername" ${row ? "disabled" : ""} placeholder="enter one username"/>
+        </div>
+        <div class="col-input">
+           <label>pass: </label><input type="text" id="UserPass" placeholder="enter one pass"/>
+        </div>
+        <div class="col-input">
+           <label>firstName: </label><input type="text" id="UserFirstName" placeholder="enter one first name"/>
+        </div>
+        <div class="col-input">
+           <label>latsName: </label><input type="text" id="UserLastName" placeholder="enter one lats name"/>
+        </div>
+        <div class="col-input">
+           <label>email: </label><input type="text" id="UserEmail" placeholder="enter one email"/>
+        </div>
+        <div class="col-image">
+           <label>updateAvatar: </label><div id="UserAvatarImg"><img />
+        </div>
+        <input type="file" id="UserAvatar" placeholder="enter one lats name"/>
+        <button class="tableAdd" onclick="userUpLoad()">Upload</button>
+        </div>
+        <div class="col-input">
+           <label>isAdmin: </label>
+           <select  class="tableSelect" id="UserIsAdmin" placeholder="please select is admin">
+            <option value="0">user</option>
+            <option value="1">admin</option>
+            </select>
+        </div>
+        `
+        str += `</div>`
+        //Splicing Rich Text Input Box
+        // str += editorHtml("introduce")
+        str += `
+           <div style="text-align:right;"> <button style="margin-right:80px;" class="tableAdd" onclick="saveUser(${index})">
+                save
+            </button>
+            </div>
+        `
+        testdata(str)
+        //After rendering the page, copy it on
+        if (row) {
+
+            document.querySelector("#UserUsername").value = row.username
+            document.querySelector("#UserUserId").value = row.userId
+            document.querySelector("#UserPass").value = row.pass
+            document.querySelector("#UserFirstName").value = row.firstName
+            document.querySelector("#UserLastName").value = row.lastName
+            document.querySelector("#UserEmail").value = row.email
+            document.querySelector("#UserAvatarImg img").src = row.avatar
+            document.querySelector("#UserIsAdmin").value = row.isAdmin
+
+        } else {
+            document.querySelector("#UserUserId").value = ""
+            document.querySelector("#UserUsername").value = ""
+            document.querySelector("#UserPass").value = ""
+            document.querySelector("#UserFirstName").value = ""
+            document.querySelector("#UserLastName").value = ""
+            document.querySelector("#UserEmail").value = ""
+            document.querySelector("#UserAvatarImg img").src = ""
+            document.querySelector("#UserIsAdmin").value = ""
+        }
+        //Calling rich text methods
+        // editor()
+        // document.getElementById("edit").addEventListener('input', function () {
+        //     let val = document.getElementById("edit").innerHTML
+        //     console.log(val)
+        // });
+        //user upload avatar
+        userUpload()
+
+    }
+
+    //上传头像的方法
+    function userUpload() {
+        const fileInput = document.getElementById('UserAvatar');
+
+        document.querySelector("#UserAvatar").addEventListener('change', function () {
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            ajax({
+                url: "/uploadFile",
+                method: 'POST',
+                dataType: "json",
+                data: formData,
+                success: (res) => {
+                     //Assign the URL returned by the backend to IMG
+                    //When saving, all you need to do is obtain the img's src
+                    document.querySelector("#UserAvatarImg img").src = res.file.url
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+
+        });
+
+    }
+
+//Click the upload button to select the image to upload
+    function userUpLoad() {
+        var fileInput = document.querySelector("[type=file]");
+        var event = document.createEvent("MouseEvents");
+        event.initEvent("click", true, false);
+        fileInput.dispatchEvent(event);
+    }
+
+    //Delete user
+    function DeleteUser(userId) {
+        if (confirm("Are you sure to delete it?")) {
+            ajax({
+                url: `/clubs/userDelete?userId=${userId}`,
+                method: 'get',
+                dataType: "json",
+
+                success: (res) => {
+                      //Assign the URL returned by the backend to IMG
+                    //When saving, all you need to do is obtain the img's src
+                    if (res.code == 200) {
+                        messageComponent.message({ type: "success", content: res.data })
+                        UserManagehead()
+                    } else {
+                        messageComponent.message({ type: "error", content: res.data })
+                    }
+
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+        }
+    }
+
+    //save user info  AddAndModifyUser
+    function saveUser(index) {
+        //Obtaining form data
+        const username = document.querySelector("#UserUsername").value
+        const userId = document.querySelector("#UserUserId").value
+        const pass = document.querySelector("#UserPass").value
+        const firstName = document.querySelector("#UserFirstName").value
+        const lastName = document.querySelector("#UserLastName").value
+        const email = document.querySelector("#UserEmail").value
+        const avatar = document.querySelector("#UserAvatarImg img").src
+        const isAdmin = document.querySelector("#UserIsAdmin").value
+
+        //data check
+        if (username == "" && index == 2) {
+            messageComponent.message({ type: "error", content: 'Username Required' })
+        } else if (pass == "") {
+            messageComponent.message({ type: "error", content: 'Pass Required' })
+        } else if (firstName == "") {
+            messageComponent.message({ type: "error", content: 'First Name Required' })
+        } else if (lastName == "") {
+            messageComponent.message({ type: "error", content: 'Last Name Required' })
+        } else if (email == "") {
+            messageComponent.message({ type: "error", content: 'Email Required' })
+        } else if (isAdmin == "") {
+            messageComponent.message({ type: "error", content: 'Is Admin Required' })
+        }
+        if (index == 2) {
+            ajax({
+                url: "/clubs/userInsert",
+                method: 'POST',
+                dataType: "json",
+                headers: { "Content-Type": "application/json" },
+                data: JSON.stringify({
+                    username,
+                    pass,
+                    firstName,
+                    lastName,
+                    email,
+                    avatar,
+                    isAdmin,
+                }),
+                success: (res) => {
+                      //Assign the URL returned by the backend to IMG
+                    //When saving, all you need to do is obtain the img's src
+                    if (res.code == 200) {
+                        messageComponent.message({ type: "success", content: res.data })
+                        UserManagehead()
+                    } else {
+                        messageComponent.message({ type: "error", content: res.data })
+                    }
+
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+
+        } else if (index == 1) {
+            ajax({
+                url: "/clubs/userUpdate",
+                method: 'POST',
+                dataType: "json",
+                headers: { "Content-Type": "application/json" },
+                data: JSON.stringify({
+                    userId,
+                    pass,
+                    firstName,
+                    lastName,
+                    email,
+                    avatar,
+                    isAdmin,
+                }),
+                success: (res) => {
+                    //Assign the URL returned by the backend to IMG
+                    //When saving, all you need to do is obtain the img's src
+                    if (res.code == 200) {
+                        messageComponent.message({ type: "success", content: res.data })
+                        UserManagehead()
+                    } else {
+                        messageComponent.message({ type: "error", content: res.data })
+                    }
+
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+
+        }
+    }
+    // ************************* Manage Users Write it here end ****************************
+
+    function ClubManagehead() {
+        //Clear table when switching tabs
+        document.querySelector(".headerbtn").innerHTML = ''
+        //Generate Filter Criteria
+        let str = `<button class="tableAdd" onclick="AddAndModifyClub(${false},2)">AddClub</button> `
+
+        str += `<span><lable class="lable">ClubName: </lable><input type="text" id="clubClubName"  class="tableSelect" oninput="tableClubInput()" />`
+
+        str += `</span>`
+        //Rendering Filter Criteria
+        document.querySelector(".headerbtn").innerHTML = str
+
+        ClubManageClick()
+
+    }
+
+    //Click on the club management module
+    function ClubManageClick() {
+        //Obtain the total number to generate pagination
+        ajax({
+            method: "get",
+            url: "/clubs/clubsCount",
+            dataType: "json",
+            success: (res) => {
+
+              //Before rendering the pagination, ensure that the dom of the pagination does not exist to avoid rendering 2 or more
+                document.querySelector("#page").innerHTML = ""
+                //Generate pagination based on total number
+                new Page({
+                    el: "#page",
+
+                    data: {
+                        count: res.total,
+                        pagenum: 5,
+                        pageindex: 5
+                    },
+                    callback: function (showpageindex) {
+                        //Get List
+                        getClubData(showpageindex)
+                    }
+                })
+            },
+            error: (err) => {
+                console.log(err)
+            }
+        })
+
+    }
+    //Get List Data
+    function getClubData(pageIndex) {
+        document.querySelector('#right .profile').innerHTML = ""
+        //Obtain the value of the change event for ClubName
+        let clubName = document.querySelector("#clubClubName").value
+        ajax({
+            method: "get",
+            url: `/clubs/clubsQuery?pageIndex=${pageIndex}&pageSize=${5}&clubName=${clubName}`,
+            dataType: "json",
+            success: (res) => {
+                //Requesting data back
+                let data = res.data
+                let dom = ""
+                dom = `<table  id="customers">
+                    <thead>
+                    <tr>
+                    <th>Club id</th>
+                    <th>Club name</th>
+                    <th>poster</th>
+                    <th>Intro</th>
+                    <th>Email</th>
+                    <th>Operate</th>
+                    </tr>
+                     </thead>
+                    <tbody>`
+                for (let i = 0; i < data.length; i++) {
+
+
+                    dom += `<tr>
+                    <td class="clubRow${i}" style="display:none;">${JSON.stringify(data[i])}</td>
+                    <td>${data[i].clubId}</td>
+                    <td>${data[i].clubName}</td>
+                    <td><img style="width:70px;height:70px;border-radius:6px; object-fit: cover;
+                    object-position: center center;" src="${data[i].poster}"/></td>
+                    <td title="${convertHtmlToText(data[i].intro)}">${convertHtmlToText(data[i].intro)}</td>
+                    <td>${data[i].email}</td>
+                    <td>
+                    <button class="modify"  onclick="AddAndModifyClub(${i},1)">Modify</button>
+                    <button class="delete"  onclick="DeleteClub(${data[i].clubId})">Delete</button>
+                    </td>`
+                }
+                dom += '</tbody></table>'
+                // let str=JSON.stringify(row).replace(/"/g, "'")
+                testdata(dom)
+                // document.querySelector("#page").innerHTML()
+                document.querySelector("#page").style.display = "flex"
+            },
+            error: (err) => {
+                console.log(err)
+            }
+        })
+
+    }
+
+    //Manage Users Add user
+    function AddAndModifyClub(i, index) {
+        // console.log(row)
+        console.log()
+        let row=""
+      if(index==1){
+        row= JSON.parse(document.querySelector(`.clubRow${i}`).innerText)
+      }
+        document.querySelector(".headerbtn").innerHTML = "<button class='tableAdd' onclick=' ClubManagehead()' >return</button>"
+        document.querySelector("#page").innerHTML = ""
+        let str = `
+        <div class="content">
+            <div class="col-input">
+                <input type="hidden" id="ClubClubId" placeholder="enter one pass"/>
+           <label>Clubname: </label><input type="text" id="ClubClubName"  placeholder="enter one Clubname"/>
+        </div>
+
+        <div class="col-input">
+           <label>email: </label><input type="text" id="ClubEmail" placeholder="enter one email"/>
+        </div>
+        <div class="col-image">
+           <label>Poster: </label><div id="ClubPosterImg"><img />
+        </div>
+        <input type="file" id="ClubPoster" />
+        <button class="tableAdd" onclick="clubUpLoad()">Upload</button>
+        </div>
+        `
+        str += `</div>`
+        //Splicing Rich Text Input Box
+        str += editorHtml("introduce")
+        str += `
+           <div style="text-align:right;margin-top:20px;"> <button style="margin-right:80px;" class="tableAdd" onclick="saveClub(${index})">
+                save
+            </button>
+            </div>
+        `
+        testdata(str)
+        //Calling rich text methods
+        editor()
+        // document.getElementById("edit").addEventListener('input', function () {
+        //     let val = document.getElementById("edit").innerHTML
+        //     console.log(val)
+        // });
+        //After rendering the page, assign values to it
+        if (index==1) {
+            document.querySelector("#ClubClubId").value = row.clubId
+            document.querySelector("#ClubClubName").value = row.clubName
+            document.querySelector("#ClubEmail").value = row.email
+            document.querySelector("#ClubPosterImg img").src = row.poster
+            document.getElementById("edit").innerHTML = row.intro
+        } else {
+            document.querySelector("#ClubClubId").value = ""
+            document.querySelector("#ClubClubName").value = ""
+            document.querySelector("#ClubEmail").value = ""
+            document.querySelector("#ClubPosterImg img").value = ""
+            document.getElementById("edit").innerHTML = ""
+        }
+
+        //user upload Poster
+        clubUpload()
+
+    }
+
+    //上传头像的方法
+    function clubUpload() {
+        const fileInput = document.getElementById('ClubPoster');
+
+        document.querySelector("#ClubPoster").addEventListener('change', function () {
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            ajax({
+                url: "/uploadFile",
+                method: 'POST',
+                dataType: "json",
+                data: formData,
+                success: (res) => {
+                    //Assign the URL returned by the backend to IMG
+                    // When saving, all you need to do is obtain the img's src
+                    document.querySelector("#ClubPosterImg img").src = res.file.url
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+
+        });
+
+    }
+
+    //Click the upload button to select the image to upload
+    function clubUpLoad() {
+        var fileInput = document.querySelector("[type=file]");
+        var event = document.createEvent("MouseEvents");
+        event.initEvent("click", true, false);
+        fileInput.dispatchEvent(event);
+    }
+
+    //save Club info  AddAndModifyUser
+    function saveClub(index) {
+
+        //Obtaining form data
+        const clubId = document.querySelector("#ClubClubId").value
+        const clubName = document.querySelector("#ClubClubName").value
+        const email = document.querySelector("#ClubEmail").value
+        const poster = document.querySelector("#ClubPosterImg img").src
+        const intro = replaceQuotes(document.querySelector("#edit").innerHTML)
+
+        //data check
+        if (clubName == "") {
+            messageComponent.message({ type: "error", content: 'Club Name Required' })
+        } else if (email == "") {
+            messageComponent.message({ type: "error", content: 'Email Required' })
+        } else if (poster == "") {
+            messageComponent.message({ type: "error", content: 'poster Required' })
+        } else if (intro == "") {
+            messageComponent.message({ type: "error", content: 'Intro Required' })
+        }
+        if (index == 2) {
+            ajax({
+                url: "clubs/clubsInsert",
+                method: 'POST',
+                dataType: "json",
+                headers: { "Content-Type": "application/json" },
+                data: JSON.stringify({
+                    clubName,
+                    email,
+                    poster,
+                    intro,
+                }),
+                success: (res) => {
+                    //Assign the URL returned by the backend to IMG
+                    // When saving, all you need to do is obtain the img's src
+                    if (res.code == 200) {
+                        messageComponent.message({ type: "success", content: res.data })
+                        ClubManagehead()
+                    } else {
+                        messageComponent.message({ type: "error", content: res.data })
+                    }
+
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+
+        } else if (index == 1) {
+            ajax({
+                url: "clubs/clubsUpdate",
+                method: 'POST',
+                dataType: "json",
+                headers: { "Content-Type": "application/json" },
+                data: JSON.stringify({
+                    clubId,
+                    clubName,
+                    email,
+                    poster,
+                    intro,
+                }),
+                success: (res) => {
+                    //Assign the URL returned by the backend to IMG
+                    // When saving, all you need to do is obtain the img's src
+                    if (res.code == 200) {
+                        messageComponent.message({ type: "success", content: res.data })
+                        ClubManagehead()
+                    } else {
+                        messageComponent.message({ type: "error", content: res.data })
+                    }
+
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+
+        }
+    }
+
+      //Delete club
+      function DeleteClub(clubId) {
+        if (confirm("Are you sure to delete it?")) {
+            ajax({
+                url: `clubs/clubsDelete?clubId=${clubId}`,
+                method: 'get',
+                dataType: "json",
+
+                success: (res) => {
+                     //Assign the URL returned by the backend to IMG
+                    // When saving, all you need to do is obtain the img's src
+                    if (res.code == 200) {
+                        messageComponent.message({ type: "success", content: res.data })
+                        ClubManageClick()
+                    } else {
+                        messageComponent.message({ type: "error", content: res.data })
+                    }
+
+                },
+                error: (err) => {
+                    console.log(err)
+                }
+            })
+        }
+    }
+
+
+    function tableClubInput(e) {
+        ClubManageClick()
+    }
+
+
+
+</script>
+</body>
+
+
+</html>

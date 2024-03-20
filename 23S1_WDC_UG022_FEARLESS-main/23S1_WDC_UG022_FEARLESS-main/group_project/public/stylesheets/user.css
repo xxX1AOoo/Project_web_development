@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: sans-serif
+
+    }
+
+.win_container{
+    width: 100%;
+    height: 100vh;
+    background-color: #23478f;
+    display:flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    }
+
+.login_bt{
+    display:inline;
+    padding: 0 20px;
+    background:#d0cbf7;
+    border: 0;
+    outline:none;
+    cursor: pointer;
+    /*font-size: 22px;
+    border-radius: 30px;*/
+    font-weight: 500;
+}
+
+
+.account{
+    /*color: white;*/
+    margin-left: -57%;
+   padding:0 30px 30px;
+   }
+
+
+.form-control-c{
+    margin-top:0px;
+    padding: 0 30px 1px;
+   }
+
+.password{
+    /*color: white;*/
+    margin-left: -68%;
+   }
+
+
+.form-control-p{
+    margin-top:0px;
+    padding: 0 30px 1px;
+   }
+
+.account-text{
+    /*color: white;*/
+    font-size:10px;
+    padding: 0 0px 20px;
+    margin-left: -48.5%;
+    margin-top:5px
+   }
+
+.check-box{
+    transform: scale(0.8);
+    padding: 10px;
+    float: left;
+    /*for margin: can adjuct checkbox and remember me position 1st 0(box up and down), -70(remember me )*/
+    margin: 0px -65px 0px 0px;
+    margin-left:25.9%;
+    cursor: pointer;
+  }
+
+.form-check{
+    font-size: 75%;
+    /*position for lower part start from remember me*/
+    margin-top:-7%;
+    margin-left:-76px;
+  }
+
+
+#forgot button {
+    /*color: white;*/
+    /*margin-right:110px;*/
+    margin-bottom:10%;
+    /*position for lower part start from login*/
+    margin:0px 50px 10px -90px;
+    font-size: 55%;
+    color:purple;
+    border: none;
+    background-color:rgb(255 255 255 / 10%);
+    /*change padding between manager and forgot
+    margin-bottom:2.9%*/
+ }
+
+ #signup button {
+    /*color: white;*/
+    /*margin-right:152px;*/
+    margin-right:-156px;
+    font-size: 55%;
+    color:purple;
+    border: none;
+    background-color:rgb(255 255 255 / 10%);
+}
+
+#signup p{
+    font-size:10px;
+    display:inline;
+    margin-right:-20px;
+}
+
+#login-bt button {
+    border-radius:10px;
+    background-color: #d0f4d0;
+}
+
+
+.popup{
+    width: 600px;
+    height: 340px;
+    background: white;
+    border-radius: 6px;
+    position:absolute;
+    /*can change depends on position (top)*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align:center;
+    padding: 0 190px 30px;
+    /*text color*/
+    color: black;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    border: 2px solid  black;
+   /*could change it back to black*/
+   box-shadow: 1px 1px 100px 10px #ff7bf1;
+
+
+
+   /*background-color:#e3f2e3;*/
+
+
+
+   /*backgrund-image: url("4K.png");
+   background-size: cover;
+   background-repeat: no-repeat;*/
+}
+
+.ajax-loader {
+   background-image: url(din.gif);
+   /*background-size: cover;*/
+   background-position: bottom;
+   background-repeat: no-repeat;
+
+
+ /*for trex.webp
+   background-image: url(trex.webp);
+   background-position-x: 320px;
+   background-position-y: center;
+   background-size: 50%;
+   background-repeat: no-repeat;*/
+}
+
+
+
+.popup-on{
+    visibility:visible;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.popup #clublogo img{
+    width: 130px;
+    margin-left: -318%;
+    /*for middle position */
+    padding: 0px 10px 65px;
+    margin-bottom: -60%;
+    margin-top: 5%;
+    cursor: pointer;
+    transition: 0s;
+    opacity:0.8;
+ }
+
+
+#clublogo img:hover {
+   transform: scaleX(-1);
+   transition: 0.5s;
+   opacity:0.8;
+}
+
+.popup img{
+    cursor: pointer;
+    width: 50px;
+    margin-top:-2%;
+    margin-right: -105%;
+    top: 50%;
+    /*for text position*/
+    padding: 0 15px px;
+}
+
+.popup button{
+    /*adjust padding between forgot and password
+    margin-left: -30px;
+    margin-right: 51px;*/
+    margin-left: 9px;
+    margin-right: 10px;
+    margin-top: 0px;
+    /*padding:0 0px 0px;*/
+    padding:0 10px 0px;
+    /*color: white;*/
+    color: black;
+    outline: inherit;
+    cursor: pointer;
+    border:1px solid #837c7c;
+    border-radius:3px;
+    background-color: transparent;
+    background-color:#d0f4d0;
+}
+
+.popup button:hover {
+    filter: brightness(150%);
+}
+
+
+.popup button::after {
+    content:"";
+    display: block;
+    height: 1px;
+    width: 0;
+    /*background-color: white;*/
+    background-color: purple;
+    transition: 0.15s width linear;
+    margin: 0 auto;
+}
+
+.popup button:hover::after {
+    width:100%;
+}
+
+#close button{
+    /*change back to black
+    color:purple;*/
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    /*right: -45px;
+    top:-0.5px;*/
+    right: -17.5px;
+    top:-1.5px;
+    border:none;
+    font-size: 20px;
+    transition:all 0.2s ease-in;
+}
+
+#close button:hover{
+    opacity: 0.6;
+}
+
+
+#alert{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0;
+    width:600px;
+    height:250px;
+    border:1px solid #a1a1a1;
+    margin:auto;
+    overflow-y:auto;
+  }

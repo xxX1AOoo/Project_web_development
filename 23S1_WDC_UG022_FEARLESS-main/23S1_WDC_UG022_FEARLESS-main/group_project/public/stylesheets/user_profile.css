@@ -1,0 +1,203 @@
+.user_profile_container {
+	display: flex;
+	flex-direction: row;
+}
+
+.box {
+    width: 270px;
+    max-height: auto;
+    border: 3px solid black;
+    padding: 10px;
+    margin: 20px;
+  }
+
+.user_menu {
+	flex: 0 0 20%;
+    padding: 20px;
+}
+
+.user_links {
+    list-style: none;
+    padding: 20px;
+    text-align: center;
+}
+
+h3.user_links {
+    margin: auto;
+}
+
+.user_link {
+    padding: 10px;
+}
+
+a {
+    line-height: 2em;
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: skyblue;
+}
+
+.profile {
+	flex: 1 1 auto;
+	margin-left: 2em;
+}
+
+.profile_picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px 20px 10px 0;
+}
+
+.user_profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile_info, .clubs_info,
+.events_info {
+    margin: 20px 0;
+}
+
+.user_info, .clubs {
+    margin-bottom: 40px;
+}
+
+.popup_win {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup_content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid grey;
+    width: 80%;
+}
+
+.close_pic, .close_info, .close_password {
+    color: grey;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close_pic:hover, .close_pic:focus,
+.close_info:hover, .close_info:focus
+.close_password:hover, .close_password:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+label.required::before {
+    content: "*";
+    color: red;
+    margin-right: 5px;
+}
+
+h1 {
+    margin: 30px 0;
+}
+
+h2 {
+    text-decoration: underline overline;
+    color: #5D5C6E;
+}
+
+.events {
+    margin: 20px 0;
+}
+
+.input-event {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: auto;
+    min-height: 100px;
+    width: 20vw;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+h1,
+input::placeholder,
+textarea::placeholder {
+    font-family: Arial, sans-serif;
+
+}
+
+h1,
+input,
+textarea {
+    font-family: Arial, sans-serif;
+
+}
+
+#members{
+    border-collapse:collapse;
+    width:500px;
+}
+
+#members td{
+    border:1px solid grey;
+    padding: 8px;
+
+}
+
+#members tr:nth-child(even){
+    background-color: white;
+    color:black;
+}
+
+#members tr:nth-child(odd){
+    background-color:rgba(0, 0, 0, 0.589);
+    color:white;
+}
+
+#members th{
+    padding-top:12px;
+    padding-bottom:12px;
+    text-align:left;
+    border:1px solid black;
+    background-color:black;
+    color:white;
+}
+
+.b1{
+    font-family: 'Raleway',sans-serif;
+    color:black;
+}
+
+#complex{
+    border-collapse: collapse;
+    width:500px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+.rsvp {
+    font-size: medium;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    margin: 50px, 0;
+}

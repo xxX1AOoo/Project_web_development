@@ -1,0 +1,157 @@
+.club{
+    width:100%;
+    margin-top: 40px;
+}
+.club .club_image{
+
+    border:0.057vw #ffffff solid;
+    float:left;
+    margin-left: 10px;
+}
+
+.club .image{
+    margin:0 auto;
+    width:71.42857vw;
+}
+
+.club .club_image img{
+    width:23.2vw;
+    height:300px;
+    cursor: pointer;
+    transition: all 0.6s;
+
+}
+
+.club .club_image:hover img{
+    transform:scale(1.2);
+    -ms-transform: scale(1.2);
+}
+
+.club .club_image dl dd{
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: cuisive;
+    font-size: 400%;
+    font-weight: bolder;
+    background: black;
+    color: #fff;
+    border-radius: 1.5vw 1.5vw 0 0;
+    padding: 1vw 2vw;
+}
+
+h2 {
+    font-family: cuisive;
+    font-size: 200%;
+    margin-left: 3vw;
+}
+
+
+.clubs h3.title_l {
+    background: black;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+    padding: 10px 20px;
+    font-size: 200%;
+}
+
+.clubs h3.paragraph {
+    margin-right: 5vw;
+}
+
+.clubs h3.title+div {
+    background: #eaf6fb;
+    padding: 20px;
+    margin: 0;
+}
+
+.clubs img.bottom {
+    width: 20vw;
+    height: 10vw;
+
+}
+
+#over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#over img {
+    max-height: 90%;
+    max-width: 90%;
+}
+
+.clubs img.top {
+    width: 5vw;
+    height: auto;
+}
+
+.div-margin {
+    align-items: center;
+    margin: 50px 50px;
+}
+
+.post-margin {
+    margin: 20px 0px;
+    overflow: auto;
+}
+
+#join-button {
+    height: 10vw;
+    width: 46.5vw;
+    font-size: 3vw;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+table thead tr{
+    background-color: lightseagreen;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+
+/* Twitter */
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+    margin-left: auto !important
+}

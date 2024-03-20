@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>sign up</title>
+        <link rel="stylesheet" href="stylesheets/signup.css">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <script src="javascripts/login.js"></script>
+        <script defer src="javascripts/script.js"></script>
+    </head>
+
+    <body>
+
+        <img src="images/home01.png" alt="backgroundimg" style="width: 100%">
+        <!-- Events Part -->
+        <div class="movingslides">
+            <div class="event_news">
+                <ul>
+                    <li><a href="events.html"><img src="images/kendo_club.png" alt="Kendo Club"></a></li>
+                    <li><a href="events.html"><img src="images/h_club1.jpg" alt="Rugby Club"></a></li>
+                    <li><a href="events.html"><img src="images/fitness_club3.jpg" alt="Fitness Club"></a></li>
+                    <li><a href="events.html"><img src="images/basketball_club.jpg" alt="Basketball Club"></a></li>
+                    <li><a href="events.html"><img src="images/billiards_club.jpg " alt="Billiard Club"></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="signup ajax-loader" id="turnonpop">
+            <div id="close">
+                <!--<button type="button" onclick="closepop()" style="float: right; width:20px">&times;</button>
+                -->
+                <div class="title">Registration</div>
+
+                <form>
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">First Name</span>
+                            <input type="text" id="signup-first" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Last Name</span>
+                            <input type="text" id="signup-last" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Username</span>
+                            <input type="text" id="signup-user" placeholder="Enter your username" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" id="signup-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <input type="password" id="signup-pass" placeholder="Enter your password" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Confirm Password</span>
+                            <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+                <!--
+                    <div class="gender-details">
+                        <input type="radio" name="gender" id="dot1">
+                        <input type="radio" name="gender" id="dot2">
+                        <input type="radio" name="gender" id="dot3">
+                        <span class="gender-title">Gender</span>
+                    <div class="category">
+
+                    <label for="dot1">
+                        <span class="dot fir"></span>
+                        <span class="gender">Male</span>
+                    </label>
+
+                    <label for="dot2">
+                        <span class="dot sec"></span>
+                        <span class="gender">Female</span>
+                    </label>
+
+                    <label for="dot3">
+                        <span class="dot thi"></span>
+                        <span class="gender">Prefer not to say</span>
+                    </label>
+                    </div>
+                    </div>
+                -->
+                    <div class="button">
+                        <input type="submit" value="Register" onclick="signup()">
+                    </div>
+
+                </form>
+
+                <a href="index.html" style="float:right; border:none; background-color: lightgrey; border-radius: 5px; padding:10px;">Back to Home page</a>
+
+            </div>
+
+        </div>
+    </body>
+</html>

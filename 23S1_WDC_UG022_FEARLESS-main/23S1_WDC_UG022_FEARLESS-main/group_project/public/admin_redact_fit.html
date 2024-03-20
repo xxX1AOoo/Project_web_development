@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>User Profile</title>
+    <style>
+        #main {
+            width: 100vw;
+            height: auto !important;
+            overflow: hidden;
+            visibility: visible;
+            margin: auto;
+            margin-top: 0px;
+
+        }
+
+        #left {
+            width: 20vw;
+            float: left;
+            margin-right: 50px;
+        }
+
+        #right {
+            width: 70vw;
+            float: left;
+
+            padding-top: 40px;
+            margin-left:50px;
+        }
+
+        body {
+            background-image: url(images/background1.jpeg);
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/user.css">
+    <link rel="stylesheet" href="stylesheets/signup.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="FEARLESS Group">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="An interactive informational website for Student Club System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--https://www.w3schools.com/howto/howto_js_mobile_navbar.asp-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add the JavaScript files -->
+
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/user_profile.css">
+
+
+    <script>
+        function testdata(obj) {
+            document.getElementById('right').innerHTML = obj;
+        }
+    </script>
+</head>
+
+
+<body >
+
+    <div class="headercontainer">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/fearless_logo.png" alt="FEARLESS Logo">
+                </a>
+            </div>
+            <div class="head">
+                <img src="images/head.jpg" alt="head" id="userfile-head" onclick="toUser()">
+            </div>
+            <nav class="homemenu">
+                <ul class="horizontal">
+                    <li><a class="page" href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="clubs.html">Clubs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <i class="fa fa-bars" id="icon" onclick="openMenu()"></i>
+        </header>
+    </div>
+    <!--Header - logo & menu bar-->
+    <div id="main">
+        <!--左侧栏目-->
+        <div id="left">
+
+            <div class="box">
+                <div class="user_menu">
+                    <h3 class="user_links">User Menu</h3>
+                </div>
+                <ul class="user_links">
+
+
+                    <!--
+                    <li class="user_link" style="cursor: pointer;" onclick="testdata(
+                    '<div class=&quot;club_post&quot;>'+
+                    '<h1>RSVP</h1>'+
+                    '<h3>We will be holding activities here, if you are free, please come</h3>'+
+                    '<h3>Time: 6PM 20/05/2023</h3>'+
+                    '<h3>LOCATION: Fitness Center</h3>'+
+                    '<a href=&quot;event_1.html&quot; class=&quot;button&quot;>View more</a>'+
+                    '<div>'
+                    )">RSVP</li> -->
+                    <li class="user_link" style="cursor: pointer;" onclick="testdata(
+                        '<h1>Post Introduction</h1>'+
+                       '<div class=&quot;input-event&quot;>'+
+                    '<label for=&quot;event&quot; class=&quot;required&quot;>Introduction:</label>' +
+                    '<textarea type=&quot;text&quot; id=&quot;event&quot; name=&quot;event&quot;  style=&quot;height:20vw;width:45vw;&quot;required ; placeholder=&quot;Introduction&quot;></textarea><br><br>'+
+                    '</div>'+
+                    '<button type=&quot;submit&quot; onclick=newPost()>Post</button>'
+    )">Introduction</li>
+                    <li class="user_link" style="cursor: pointer;" onclick="testdata(
+                       '<label for=&quot;email_fit&quot; class=&quot;required&quot;>Email Address:</label>' +
+                    '<input type=&quot;email&quot; id=&quot;email_fit&quot; name=&quot;email_fit&quot;  required; placeholder=&quot;DemoName@example.com&quot;><br><br>' +
+                    '<label for=&quot;phone_fit&quot; class=&quot;required&quot;>Phone Number:</label>' +
+                    '<input type=&quot;text&quot; id=&quot;phone_fit&quot; name=&quot;phone_fit&quot;  required; placeholder=&quot;1234567890&quot;><br><br>'+
+                    '<button type=&quot;submit&quot; onclick=newPost()>Post</button>'
+    )">Contact</li>
+<li class="user_link" style="cursor: pointer;" onclick="testdata(
+  '<h1>Post Update</h1>'+
+                    '<label for=&quot;post-title&quot; class=&quot;required&quot;>Title</label>' +
+                    '<input type=&quot;text&quot; id=&quot;post-title&quot; name=&quot;post-title&quot;  required><br><br>'+
+                    '<div>' +
+                        '<div class=&quot;input-event&quot;>'+
+                            '<label for=&quot;post-content&quot; class=&quot;required&quot;> Content</label>' +
+                            '<textarea type=&quot;text&quot; id=&quot;post-content&quot; name=&quot;post-content&quot;  style=&quot;height:20vw;width:45vw;&quot;required></textarea><br><br>'+
+                        '</div>' +
+                        '<input type=checkbox id=post-private name=post-private value=private style=margin-right:10px>' +
+                        '<label for=post-private>Member-only</label><br><br>' +
+                    '</div>' +
+                    '<button type=&quot;submit&quot; onclick=newPost()>Post</button>'
+)">Post</li>
+<li class="user_link" style="cursor: pointer;" onclick="testdata(
+'<h1>Post event</h1>'+
+                    '<label for=&quot;event_title&quot; class=&quot;required&quot;>Event title:</label>' +
+                    '<input type=&quot;text&quot; id=&quot;event_title&quot; name=&quot;event_title&quot;  required ; placeholder=&quot;Title&quot;><br><br>'+
+                    '<div class=&quot;input-event&quot;>'+
+                    '<label for=&quot;event&quot; class=&quot;required&quot;>Event introduction:</label>' +
+                    '<textarea type=&quot;text&quot; id=&quot;event&quot; name=&quot;event&quot;  style=&quot;height:20vw;width:45vw;&quot;required ; placeholder=&quot;Introduction&quot;></textarea><br><br>'+
+                    '</div>'+
+                    '<label for=&quot;location&quot; class=&quot;required&quot;>Location:</label>' +
+                    '<input type=&quot;text&quot; id=&quot;location&quot; name=&quot;location&quot;  required ; placeholder=&quot;Location&quot;><br><br>'+
+                    '<label for=&quot;time&quot; class=&quot;required&quot;>Time:</label>' +
+                    '<input type=&quot;text&quot; id=&quot;time&quot; name=&quot;time&quot;  required ; placeholder=&quot;Time&quot;><br><br>' +
+                    '<button type=&quot;submit&quot;>Post</button>'
+)">event</li>
+
+
+                    <li class="user_link" style="cursor: pointer;"><a href="index.html">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--右侧内容-->
+        <div id="right">
+            <main class="profile">
+
+                <h1>Manage Fitness Club</h1>
+
+
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerer">
+            <p>&copy; 2023 <span id="webName">FEARLESS Student Clubs</span></p>
+            <p>Phone us: 434990589</p>
+            <p>Email us: FARELESSclub@email.com.au</p>
+        </div>
+    </footer>
+</body>
+
+
+</html>
